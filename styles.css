@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+}
+
+.pie-chart {
+    border: 1px solid black;
+    height: 600px;
+    width: 600px;
+}
+
+.life {
+    /* transition-property: r;
+    transition-duration: 1s; */
+
+    transition: transform 1s;
+}
+
+.life:hover {
+    /* transform: translateZ(100px); */
+}
