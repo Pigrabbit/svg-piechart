@@ -2,7 +2,8 @@ const $pieChart = document.querySelector("svg.pie-chart");
 const $pies = [...document.querySelectorAll("circle.target")];
 
 const radius = 10;
-const circumference = 62.83 // 2 * pi * r
+const pi = 3.14;
+const circumference = 2 * pi * radius
 
 const data = {
     life: 71,
@@ -17,8 +18,12 @@ const percentages = Object.values(data)
         return arr.slice(idx).reduce((acc, cur) => acc + cur)
     })
 
-console.log(percentages);
-
 $pies.forEach((pie, idx) => {
-    pie.setAttribute("stroke-dasharray", `calc((${percentages[idx]}/100) * ${circumference}) ${circumference}`);
+    if (idx === 0) {
+        pie.setAttribute("stroke-dasharray",
+        `${circumference} ${circumference}`);
+    } else {
+        pie.setAttribute("stroke-dasharray",
+         `calc((${percentages[idx-1]}/100) * ${circumference}) ${circumference}`);
+    }
 })

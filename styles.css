@@ -15,13 +15,35 @@ body {
     width: 600px;
 }
 
+.target {
+    animation: paint 1s;
+    animation-fill-mode: forwards;
+}
+
+.etc {
+    stroke: #0984e3;
+}
+
+.transportation {
+    stroke: #74b9ff;
+}
+
+
+.grocery {
+    stroke: #00cec9;
+}
+
 .life {
-    /* transition-property: r;
-    transition-duration: 1s; */
-
-    transition: transform 1s;
+    stroke: #81ecec;
 }
 
-.life:hover {
-    /* transform: translateZ(100px); */
+.inner {
+    border: none;
 }
+
+@keyframes paint {
+    from {
+        stroke-dasharray: 0 62.83;
+    }
+}
+
